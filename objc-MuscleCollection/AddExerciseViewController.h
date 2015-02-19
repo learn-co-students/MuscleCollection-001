@@ -16,7 +16,7 @@
 
 @end
 
-@interface AddExerciseViewController : UIViewController < UITextFieldDelegate>
+@interface AddExerciseViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UITextFieldDelegate>
 
 - (IBAction)newExerciseTapped:(UIButton *)sender;
 
