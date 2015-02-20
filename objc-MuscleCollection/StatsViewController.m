@@ -154,7 +154,7 @@
         
     }
     else {
-        workoutFilter = [NSPredicate predicateWithFormat:@"exercise.muscleGroups CONTAINS %@", ((FISExercise *)self.muscleGroups[pickerRow]).name];
+        workoutFilter = [NSPredicate predicateWithFormat:@"exercise.muscleGroups.name CONTAINS %@", ((FISExercise *)self.muscleGroups[pickerRow]).name];
     }
     
     NSArray *filteredWorkouts = [self.workouts filteredArrayUsingPredicate:workoutFilter];

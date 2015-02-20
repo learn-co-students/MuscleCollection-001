@@ -363,13 +363,62 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p5K-4i-fFo">
+                                <rect key="frame" x="36" y="223" width="528" height="319"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="npw-gY-Yma">
+                                    <size key="itemSize" width="240" height="205"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MuscleGroupCell" id="km6-PT-kGx" customClass="MuscleGroupCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="205"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oQ7-Rn-ljY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="205"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rz9-RN-jva">
+                                                    <rect key="frame" x="8" y="176" width="224" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="oQ7-Rn-ljY" secondAttribute="trailing" constant="-8" id="0kC-YI-zBl"/>
+                                            <constraint firstItem="rz9-RN-jva" firstAttribute="leading" secondItem="km6-PT-kGx" secondAttribute="leadingMargin" id="NAb-OL-ZZo"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="oQ7-Rn-ljY" secondAttribute="bottom" constant="-8" id="NXM-2F-fQp"/>
+                                            <constraint firstItem="rz9-RN-jva" firstAttribute="trailing" secondItem="km6-PT-kGx" secondAttribute="trailingMargin" id="QNg-US-209"/>
+                                            <constraint firstItem="oQ7-Rn-ljY" firstAttribute="top" secondItem="km6-PT-kGx" secondAttribute="topMargin" constant="-8" id="Tgs-Fd-Bhh"/>
+                                            <constraint firstItem="rz9-RN-jva" firstAttribute="bottom" secondItem="km6-PT-kGx" secondAttribute="bottomMargin" id="bYI-34-mT6"/>
+                                            <constraint firstItem="oQ7-Rn-ljY" firstAttribute="leading" secondItem="km6-PT-kGx" secondAttribute="leadingMargin" constant="-8" id="eQ5-Hb-xHe"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="muscleGroupImageView" destination="oQ7-Rn-ljY" id="dOb-K2-0B4"/>
+                                            <outlet property="muscleGroupNameLabel" destination="rz9-RN-jva" id="yXc-7X-LrJ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="p5K-4i-fFo" firstAttribute="leading" secondItem="sW3-Mi-sa8" secondAttribute="leadingMargin" constant="20" id="9rN-Iv-bQE"/>
                             <constraint firstItem="4Rv-2c-M0f" firstAttribute="top" secondItem="vqn-qh-zcP" secondAttribute="bottom" constant="32.5" id="Axq-PF-mUh"/>
                             <constraint firstItem="vqn-qh-zcP" firstAttribute="centerY" secondItem="iMH-mj-OgS" secondAttribute="centerY" constant="-4.75" id="Bgs-TY-9f5"/>
                             <constraint firstItem="4Rv-2c-M0f" firstAttribute="leading" secondItem="vqn-qh-zcP" secondAttribute="leading" id="Cd4-FE-4YW"/>
+                            <constraint firstItem="GJ2-2W-Pj0" firstAttribute="top" secondItem="p5K-4i-fFo" secondAttribute="bottom" constant="8" id="GwD-x2-yrf"/>
                             <constraint firstItem="vqn-qh-zcP" firstAttribute="top" secondItem="PIl-bS-YyE" secondAttribute="bottom" constant="102" id="HUf-Ow-5BE"/>
+                            <constraint firstItem="p5K-4i-fFo" firstAttribute="top" secondItem="4Rv-2c-M0f" secondAttribute="bottom" constant="27.5" id="MoT-iL-Kdz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p5K-4i-fFo" secondAttribute="trailing" constant="20" id="O9l-wS-8F1"/>
                             <constraint firstItem="GJ2-2W-Pj0" firstAttribute="leading" secondItem="sW3-Mi-sa8" secondAttribute="leadingMargin" constant="20" id="VAq-XQ-1bv"/>
                             <constraint firstItem="vqn-qh-zcP" firstAttribute="leading" secondItem="sW3-Mi-sa8" secondAttribute="leadingMargin" constant="20" id="YNA-uZ-JP5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iMH-mj-OgS" secondAttribute="trailing" constant="20" id="Zm2-7a-xC2"/>
@@ -379,12 +428,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="exerciseCollectionView" destination="p5K-4i-fFo" id="TsT-hh-vth"/>
                         <outlet property="exerciseName" destination="iMH-mj-OgS" id="Jwg-pk-8hb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PAf-VX-cXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="198.5"/>
+            <point key="canvasLocation" x="1476" y="198"/>
         </scene>
     </scenes>
 </document>
