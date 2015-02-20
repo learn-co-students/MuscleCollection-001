@@ -27,9 +27,7 @@
     self.exerciseCollectionView.delegate = self;
     self.exerciseCollectionView.dataSource = self;
     self.exerciseCollectionView.allowsMultipleSelection = YES;
-    self.exerciseCollectionView.delaysContentTouches = NO;
     
-//    [self.exerciseCollectionView registerClass:[MuscleGroupCollectionViewCell class] forCellWithReuseIdentifier:@"MuscleGroupCell"];
     [self.exerciseCollectionView reloadData];
     // Do any additional setup after loading the view.
 }
