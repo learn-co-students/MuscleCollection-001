@@ -16,4 +16,6 @@
 
 - (instancetype)initWithName:(NSString *)name MuscleGroupImage:(UIImage *)muscleGroupImage;
 
++ (NSArray *)generateDefaultMuscleGroups;
+
 @end

@@ -10,6 +10,7 @@
 #import "StatsViewController.h"
 #import "FISWorkout.h"
 #import "FISExercise.h"
+#import "FISMuscleGroup.h"
 
 @interface AddEntryViewController ()
 
@@ -38,7 +39,7 @@
         [_exercises addObject:addNewExerciseEntry];
         
         FISExercise *pushups = [[FISExercise alloc] initWithName:@"Pushups"];
-        pushups.muscleGroups = [[NSMutableArray alloc] initWithArray: @[@"Pectoralis Major", @"Pectoralis Minor", @"Latissimus Dorsi"]];
+        pushups.muscleGroups = [[NSMutableArray alloc] initWithArray:[FISMuscleGroup generateDefaultMuscleGroups]];
         
         [_exercises addObject:pushups];
         

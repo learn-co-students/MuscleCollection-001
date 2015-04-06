@@ -80,7 +80,7 @@
 -(NSMutableArray *)exercises {
     if (!_exercises) {
         FISExercise *pushups = [[FISExercise alloc] initWithName:@"Pushups"];
-        pushups.muscleGroups = [[NSMutableArray alloc] initWithArray: @[@"Pectoralis Major", @"Pectoralis Minor", @"Latissimus Dorsi"]];
+        pushups.muscleGroups = [[NSMutableArray alloc] initWithArray:[FISMuscleGroup generateDefaultMuscleGroups]];
         _exercises = [[NSMutableArray alloc] initWithArray:@[pushups]];
     }
     
