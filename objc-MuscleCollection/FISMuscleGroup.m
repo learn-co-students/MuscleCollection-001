@@ -23,4 +23,14 @@
 -(NSString *)description {
     return self.name;
 }
+
++ (NSArray *)generateDefaultMuscleGroups
+{
+    FISMuscleGroup *pectoralisMajor = [[FISMuscleGroup alloc] initWithName:@"Pectoralis Major" MuscleGroupImage:[UIImage imageNamed:@"PectoralisMajor.png"]];
+    FISMuscleGroup *pectoralisMinor = [[FISMuscleGroup alloc] initWithName:@"Pectoralis Minor" MuscleGroupImage:[UIImage imageNamed:@"PectoralisMinor.png"]];
+    FISMuscleGroup *latissimusDorsi = [[FISMuscleGroup alloc] initWithName:@"Latissimus Dorsi" MuscleGroupImage:[UIImage imageNamed:@"LatissimusDorsi.png"]];
+    
+    return @[pectoralisMajor, pectoralisMinor, latissimusDorsi];
+}
+
 @end
