@@ -9,23 +9,35 @@
 #import "AddExerciseViewController.h"
 #import "FISExercise.h"
 #import "FISMuscleGroup.h"
+#import "MuscleCollectionViewCell.h"
 
 @interface AddExerciseViewController ()
 
 @property (weak, nonatomic) IBOutlet UICollectionView *exerciseCollectionView;
 @property (strong, nonatomic) NSMutableArray *muscleGroups;
 @property (strong, nonatomic) FISExercise *exerciseToAdd;
+@property (strong, nonatomic) NSIndexPath *index;
+
 @end
 
 @implementation AddExerciseViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.exerciseName.delegate = self;
+    self.exerciseCollectionView.allowsMultipleSelection = YES;
+    self.exerciseCollectionView.delegate = self;
+    self.exerciseCollectionView.dataSource = self;
+  
+    
+    
     
     // Do any additional setup after loading the view.
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -44,7 +56,7 @@
         FISMuscleGroup *pectoralisMajor = [[FISMuscleGroup alloc] initWithName:@"Pectoralis Major" MuscleGroupImage:[UIImage imageNamed:@"PectoralisMajor.png"]];
         FISMuscleGroup *pectoralisMinor = [[FISMuscleGroup alloc] initWithName:@"Pectoralis Minor" MuscleGroupImage:[UIImage imageNamed:@"PectoralisMinor.png"]];
         FISMuscleGroup *rectusAbdominus = [[FISMuscleGroup alloc] initWithName:@"Rectus Abdominis" MuscleGroupImage:[UIImage imageNamed:@"RectusAbdominis.png"]];
-        FISMuscleGroup *transverseAbdominus = [[FISMuscleGroup alloc] initWithName:@"Transverse Abdominis" MuscleGroupImage:[UIImage imageNamed:@"TransverseAbominis.png" ]];
+        FISMuscleGroup *transverseAbdominus = [[FISMuscleGroup alloc] initWithName:@"Transverse Abdominis" MuscleGroupImage:[UIImage imageNamed:@"TransversusAbdominis.png"]];
         FISMuscleGroup *vastusLateralis = [[FISMuscleGroup alloc] initWithName:@"Quadriceps" MuscleGroupImage:[UIImage imageNamed:@"VastusLateralis.png"]];
 
         
@@ -86,5 +98,56 @@
     [textField resignFirstResponder];
     return YES;
 }
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section{
+    return [self.muscleGroups count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    MuscleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ImageView" forIndexPath:indexPath];
+    
+    
+    
+    FISMuscleGroup *muscleGroup = self.muscleGroups[indexPath.row];
+    cell.muscleImageView.alpha = 0.5;
+    
+    cell.muscleImageView.image = muscleGroup.imageOfMuscleGroup;
+    cell.muscleLabel.text = muscleGroup.name;
+    
+    if([self.exerciseToAdd.muscleGroups containsObject:muscleGroup]){
+        cell.muscleImageView.alpha = 1;
+    }
+    
+   
+    
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MuscleCollectionViewCell* cell = (MuscleCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.muscleImageView.alpha = 1.0;
+    FISMuscleGroup *selectedMuscleGroup = self.muscleGroups[indexPath.row];
+    [self.exerciseToAdd.muscleGroups addObject:selectedMuscleGroup];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MuscleCollectionViewCell* cell = (MuscleCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.muscleImageView.alpha = 0.5;
+    FISMuscleGroup *selectedMuscleGroup = self.muscleGroups[indexPath.row];
+    [self.exerciseToAdd.muscleGroups removeObject:selectedMuscleGroup];
+
+  
+}
+
+
+
+
+
+
+
 
 @end

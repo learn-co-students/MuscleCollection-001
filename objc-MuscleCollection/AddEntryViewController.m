@@ -57,6 +57,8 @@
     FISExercise *exercise = self.exercises[[self.exerciseTableView indexPathForSelectedRow].row];
 
     FISWorkout *workout = [[FISWorkout alloc] initWithExercise:exercise Reps:@([self.numberOfExerciseTextField.text integerValue]) Sets:@([self.numberOfSetsTextField.text integerValue]) NumberOfWorkoutBuddies:@([self.numberOfStudentsTextField.text integerValue]) TimeStamp:self.datePicker.date];
+    
+   
 
     [self.exercises removeObjectAtIndex:0];
     ((StatsViewController *)self.delegate).exercises = self.exercises ;
@@ -117,6 +119,13 @@
     
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if([self shouldPerformSegueWithIdentifier:@"addExercise" sender:self]){
+        [self performSegueWithIdentifier:@"addExercise" sender:self];
+    }}
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     

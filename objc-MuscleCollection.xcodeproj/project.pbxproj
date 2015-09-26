@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26BFDDC91BAD0AF100B28C11 /* MuscleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BFDDC81BAD0AF100B28C11 /* MuscleCollectionViewCell.m */; };
 		3134AEEA1A8D12A300BF61A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134AEE91A8D12A300BF61A5 /* main.m */; };
 		3134AEED1A8D12A300BF61A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134AEEC1A8D12A300BF61A5 /* AppDelegate.m */; };
 		3134AEF01A8D12A300BF61A5 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134AEEF1A8D12A300BF61A5 /* StatsViewController.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26BFDDC71BAD0AF100B28C11 /* MuscleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MuscleCollectionViewCell.h; path = ../MuscleCollectionViewCell.h; sourceTree = "<group>"; };
+		26BFDDC81BAD0AF100B28C11 /* MuscleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MuscleCollectionViewCell.m; path = ../MuscleCollectionViewCell.m; sourceTree = "<group>"; };
 		3134AEE41A8D12A300BF61A5 /* objc-MuscleCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "objc-MuscleCollection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3134AEE81A8D12A300BF61A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3134AEE91A8D12A300BF61A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				3134AF111A8D3E8D00BF61A5 /* AddEntryViewController.m */,
 				3134AF191A8E636600BF61A5 /* AddExerciseViewController.h */,
 				3134AF1A1A8E636600BF61A5 /* AddExerciseViewController.m */,
+				26BFDDC71BAD0AF100B28C11 /* MuscleCollectionViewCell.h */,
+				26BFDDC81BAD0AF100B28C11 /* MuscleCollectionViewCell.m */,
 				3134AEF11A8D12A300BF61A5 /* Main.storyboard */,
 				3134AEF41A8D12A300BF61A5 /* Images.xcassets */,
 				3134AFB91A94F1E100BF61A5 /* MuscleImages */,
@@ -299,6 +304,7 @@
 				3134AF1B1A8E636600BF61A5 /* AddExerciseViewController.m in Sources */,
 				3134AF151A8D44F400BF61A5 /* FISWorkout.m in Sources */,
 				3134AEED1A8D12A300BF61A5 /* AppDelegate.m in Sources */,
+				26BFDDC91BAD0AF100B28C11 /* MuscleCollectionViewCell.m in Sources */,
 				3134AFA21A94F10900BF61A5 /* FISMuscleGroup.m in Sources */,
 				3134AEEA1A8D12A300BF61A5 /* main.m in Sources */,
 			);

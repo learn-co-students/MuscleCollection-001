@@ -16,11 +16,14 @@
 
 @end
 
-@interface AddExerciseViewController : UIViewController < UITextFieldDelegate>
+@interface AddExerciseViewController : UIViewController < UITextFieldDelegate, UICollectionViewDelegate,
+UICollectionViewDataSource>
+
 
 - (IBAction)newExerciseTapped:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *exerciseName;
 @property (weak, nonatomic) id<ExerciseProtocol> delegate;
+
 
 @end
